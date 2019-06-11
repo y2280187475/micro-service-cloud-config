@@ -20,7 +20,7 @@ eureka:
     fetch-registry: false #代表当前微服务就是注册中心, 自己职责就是维护服务, 并不需要去检索服务
     service-url:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
-      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
 
 ---
 server:
@@ -40,7 +40,7 @@ eureka:
     fetch-registry: false #代表当前微服务就是注册中心, 自己职责就是维护服务, 并不需要去检索服务
     service-url:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
-      defaultZone: http://eureka7002.com:70002/eureka,http://eureka7001.com:70001/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7001.com:70001/eureka,http://eureka7002.com:70002/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
 
 
 #注意保存格式utf8
