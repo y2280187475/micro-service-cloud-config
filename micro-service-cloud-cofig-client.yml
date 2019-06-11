@@ -1,37 +1,32 @@
 ﻿spring:
   profiles:
-    active:
-    - dev
-	
----
+    active: -dev
 
+---
 server:
   port: 8201
-  
 spring:
-  profiles: dev #开发环境
+  profiles: dev
   application:
-    name: micro-service-cloud-config-client
+    name: micro-service-cloud-config-client #开发环境
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka-dev.com:7001/eureka/
 
-	
-    
---- 
+---
 server:
   port: 8202
-  
 spring:
-  profiles: test #测试环境
+  profiles: test
   application:
-    name: micro-service-cloud-config-client
+    name: micro-service-cloud-config-client #开发环境
+
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-test.com:7001/eureka/	
+      defaultZone: http://eureka-test.com:7001/eureka/
 
-    
-#注意保存为utf-8     
-	
+#注意保存格式utf8
+
