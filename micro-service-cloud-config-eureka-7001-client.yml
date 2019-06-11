@@ -1,0 +1,47 @@
+﻿spring:
+  profiles:
+    active: -dev
+
+---
+server:
+  port: 7001
+  
+spring:
+  profiles: dev
+  application:
+    name: micro-service-cloud-config-eureka-server #开发环境
+
+eureka:
+  instance:
+    #hostname: localhost #定义当前eureka实例的名称
+    hostname: eureka7001.com #定义当前eureka实例的名称
+  client:
+    register-with-eureka: false # 代表当前微服务不会注册到注册中心
+    fetch-registry: false #代表当前微服务就是注册中心, 自己职责就是维护服务, 并不需要去检索服务
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7005.com:7005/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+
+---
+server:
+  port: 70001
+  
+spring:
+  profiles: test
+  application:
+    name: micro-service-cloud-config-eureka-server #开发环境
+
+eureka:
+  instance:
+    #hostname: localhost #定义当前eureka实例的名称
+    hostname: eureka7001.com #定义当前eureka实例的名称
+  client:
+    register-with-eureka: false # 代表当前微服务不会注册到注册中心
+    fetch-registry: false #代表当前微服务就是注册中心, 自己职责就是维护服务, 并不需要去检索服务
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7002.com:70002/eureka,http://eureka7005.com:70005/eureka #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+
+
+#注意保存格式utf8
+
