@@ -36,11 +36,7 @@ info:
     artifactId: $project.artifactId$
     version: $project.version$     
     
----   
-spring:
-  profiles: test #测试环境
-  application:
-    name: micro-service-cloud-config-provider-server
+
     
 #注意保存为utf-8         
       
