@@ -35,6 +35,8 @@ info:
     artifactId: $project.artifactId$
     version: $project.version$  
 
+
+
 ---
 server:
   port: 80001
