@@ -21,7 +21,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/cloud01
 eureka:
   client:
-    service-url: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7005.com:7005/eureka
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7005.com:7005/eureka
   instance:
     prefer-ip-address: true
     instance-id: micro-service-cloud-dept-8002
