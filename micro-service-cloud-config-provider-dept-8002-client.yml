@@ -1,19 +1,18 @@
 ﻿spring:
   profiles:
-    active: -dev
+    active:
+    - dev
 
 ---
 server:
   port: 8002
-  
-spring:
-  profiles: dev
-  application:
-    name: micro-service-cloud-config-provider-server #开发环境
-    
+ 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 spring:
+  profiles: dev #开发环境
+  application:
+    name: micro-service-cloud-config-provider-server #开发环境
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -33,20 +32,18 @@ info:
     name: www.zouqi.cn
   build:
     artifactId: $project.artifactId$
-    version: $project.version$  
-
+    version: $project.version$     
+    
 ---
 server:
-  port: 80002
-  
-spring:
-  profiles: test
-  application:
-    name: micro-service-cloud-config-provider-server #开发环境
-    
+  port: 80001
+ 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 spring:
+  profiles: test #开发环境
+  application:
+    name: micro-service-cloud-config-provider-server #开发环境
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -54,10 +51,11 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/cloud01
 eureka:
   client:
-    service-url: http://eureka7001.com:70001/eureka,http://eureka7002.com:70002/eureka,http://eureka7005.com:70005/eureka
+    service-url: 
+      defaultZone: http://eureka7001.com:70001/eureka,http://eureka7002.com:70002/eureka,http://eureka7005.com:70005/eureka
   instance:
     prefer-ip-address: true
-    instance-id: micro-service-cloud-dept-80002
+    instance-id: micro-service-cloud-dept-80001
 info: 
   app:
     name: zouqi-micro-service
@@ -65,9 +63,7 @@ info:
     name: www.zouqi.cn
   build:
     artifactId: $project.artifactId$
-    version: $project.version$     
-
-
-
-#注意保存格式utf8
-
+    version: $project.version$   
+    
+#注意保存为utf-8         
+      
